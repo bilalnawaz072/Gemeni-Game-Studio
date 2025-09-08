@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterate on a Game - Gemini Game Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page">
+    <header class="site-header">
+        <a href="/index.html" class="back-button" aria-label="Back to home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-back">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </a>
+        <h1 class="page-title">Iterate on a Game</h1>
+    </header>
+
+    <main class="container">
+        <section class="card create-card" aria-labelledby="iterate-heading">
+            <h2 id="iterate-heading" class="card-title">Refine and iterate</h2>
+
+            <form id="iteration-form" class="form" novalidate>
+                <div class="form-row">
+                    <label for="game-select" class="label">Choose a game</label>
+                    <select id="game-select" class="input select" required>
+                        <option value="">-- Please choose a game --</option>
+                        <!-- options populated by app.js -->
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="iteration-prompt" class="label">Describe the changes</label>
+                    <textarea id="iteration-prompt" class="textarea" rows="5" placeholder="e.g., Add a score counter, change the background to a space theme..." required disabled></textarea>
+                    <p class="hint">Describe the exact change: UI, mechanics, difficulty, visuals, or a single feature.</p>
+                </div>
+
+                <div class="actions">
+                    <button id="iterate-button" type="submit" class="btn primary" disabled>Iterate</button>
+                    <button id="clear-iterate" type="button" class="btn ghost">Clear</button>
+                </div>
+            </form>
+
+            <div id="loading-indicator" class="loading hidden" role="status" aria-live="polite">
+                <div class="spinner" aria-hidden="true"></div>
+                <p class="loading-text">Iterating your game…</p>
+            </div>
+        </section>
+
+        <aside class="card preview">
+            <h3 class="card-title small">Iteration Notes</h3>
+            <div class="preview-body small-text">
+                <p class="muted">Select a game to enable iteration. Iteration will produce an updated preview you can review and export.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <p>© Gemini Game Studio</p>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
